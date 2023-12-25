@@ -1,10 +1,16 @@
 # stlyized-QR-code-generation
 
 ## Description
-This project uses (Stable Diffusion)[https://ieeexplore.ieee.org/document/9878449] with four layers of (ControlNet)[https://github.com/lllyasviel/ControlNet] in order to generate QR codes that contain a company logo and also generated imagery. It requires a generated QR code for whatever link should be embedded and a company logo. ![QR Code Generated with University of Michigan Logo](examples/michigan.jpeg)
+This project uses [Stable Diffusion](https://ieeexplore.ieee.org/document/9878449) with four layers of [ControlNet](https://github.com/lllyasviel/ControlNet) in order to generate QR codes that contain a company logo and also generated imagery. It requires a generated QR code for whatever link should be embedded and a company logo. 
+
+![QR Code Generated with University of Michigan Logo](examples/michigan.jpeg)
 
 ## Installation
-Clone the repository and then utilize the notebook with desired input images
+Clone the repository and then utilize the notebook with desired input images.
+
+```
+git clone https://github.com/mbederman/stlyized-QR-code-generation.git
+```
 
 ## Usage
 
@@ -39,4 +45,17 @@ In addition, the logo should be resized before hand in order to make it fit insi
 
 ## Model
 
+Here are each of the ControlNets used with their preprocessor (Preprocessor -> ControlNet).
+
+1. Gaussian Blur -> [Brightness](https://huggingface.co/ioclab/ioc-controlnet/blob/main/models/control_v1p_sd15_brightness.safetensors)
+2. Tile -> [Tile](https://huggingface.co/lllyasviel/ControlNet-v1-1/tree/main)
+3. [Lineart](https://huggingface.co/lllyasviel/Annotators/tree/main) -> [Lineart](https://huggingface.co/lllyasviel/ControlNet-v1-1/tree/main)
+4. [Lineart Anime](https://huggingface.co/lllyasviel/Annotators/tree/main) -> [Lineart Anime](https://huggingface.co/lllyasviel/ControlNet-v1-1/tree/main)
+
 ## Examples
+
+![QR Code Generated with Morning Brew Logo](examples/morning-brew.png)
+
+![QR Codes Generated with Michigan Logo](examples/michigan-4.jpeg)
+
+![QR Codes Generated with Nike Logo](examples/nike-40.jpeg)
